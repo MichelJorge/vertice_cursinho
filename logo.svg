@@ -1,0 +1,16 @@
+<svg viewBox="0 0 400 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Telhado no Tom Verde Escuro Murcho -->
+    <path d="M40 110 L200 40 L360 110" stroke="#688273" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Quadros com Cores da Paleta -->
+    <rect x="135" y="115" width="60" height="60" rx="8" fill="#7E998A"/>
+    <rect x="205" y="115" width="60" height="60" rx="8" fill="#B8A3B8"/>
+    <rect x="135" y="185" width="60" height="60" rx="8" fill="#B8A3B8"/>
+    <rect x="205" y="185" width="60" height="60" rx="8" fill="#7E998A"/>
+
+    <line x1="80" y1="260" x2="320" y2="260" stroke="#2D3A34" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Textos -->
+    <text x="200" y="285" font-family="sans-serif" font-size="26" font-weight="700" fill="#2D3A34" text-anchor="middle" letter-spacing="1.5">ESPAÇO PRADO</text>
+    <text x="200" y="305" font-family="sans-serif" font-size="10" font-weight="600" fill="#5C6B63" text-anchor="middle" letter-spacing="2">PSICOPEDAGOGIA • AEE • LIBRAS • REFORÇO</text>
+</svg>
