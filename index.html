@@ -6,7 +6,6 @@
 <title>Cursinho Vértice | Preparatório ETEC e ENEM</title>
 <meta name="description" content="Cursinho preparatório para ETEC e ENEM com professores veteranos e portal de simulados.">
 <meta name="theme-color" content="#0B1B3A">
-<link rel="icon" href="logo.svg" type="image/svg+xml">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
@@ -18,12 +17,9 @@
   --gold: #FFD93D;
   --text: #FFFFFF;
   --text-alt: #B8C7E0;
-  --grad-1: linear-gradient(135deg, #4ECDC4, #44A08D);
-  --grad-2: linear-gradient(135deg, #FF6B6B, #FF8E53);
-  --shadow: 0 10px 40px rgba(78, 205, 196, 0.15);
-  --shadow-strong: 0 15px 50px rgba(0,0,0,0.3);
 }
 
+/* Corrigido: era "-" e agora é "*" */
 * {
   margin: 0;
   padding: 0;
@@ -39,10 +35,8 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
-/* 🔵 Animação de partículas de fundo */
 body::before {
   content: '';
   position: fixed;
@@ -52,16 +46,9 @@ body::before {
   height: 100%;
   background: 
     radial-gradient(circle at 15% 40%, rgba(78,205,196,0.08) 0%, transparent 50%),
-    radial-gradient(circle at 85% 60%, rgba(255,107,107,0.06) 0%, transparent 50%),
-    radial-gradient(circle at 50% 20%, rgba(255,217,61,0.04) 0%, transparent 50%);
+    radial-gradient(circle at 85% 60%, rgba(255,107,107,0.06) 0%, transparent 50%);
   pointer-events: none;
   z-index: -1;
-  animation: bgPulse 8s ease-in-out infinite alternate;
-}
-
-@keyframes bgPulse {
-  0% { opacity: 0.7; }
-  100% { opacity: 1; }
 }
 
 .w {
@@ -70,7 +57,7 @@ body::before {
   margin: 0 auto;
 }
 
-/* 🎯 Cabeçalho */
+/* Cabeçalho */
 header {
   position: fixed;
   top: 0;
@@ -78,9 +65,8 @@ header {
   width: 100%;
   z-index: 1000;
   backdrop-filter: blur(12px);
-  background: rgba(11, 27, 58, 0.8);
+  background: rgba(11, 27, 58, 0.85);
   border-bottom: 1px solid rgba(78, 205, 196, 0.1);
-  transition: all 0.4s ease;
 }
 
 .nav {
@@ -97,27 +83,13 @@ header {
   text-decoration: none;
   color: var(--text);
   font-weight: 700;
-  transition: transform 0.3s ease;
-}
-
-.brand:hover {
-  transform: scale(1.02);
-}
-
-.brand img {
-  height: 45px;
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
 }
 
 .brand span small {
   font-size: 0.7rem;
   color: var(--accent);
   letter-spacing: 2px;
+  display: block;
 }
 
 .brand span b {
@@ -133,11 +105,12 @@ header {
   font-size: 0.75rem;
   color: var(--text-alt);
   font-weight: 400;
+  font-style: normal;
 }
 
 .links {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   align-items: center;
 }
 
@@ -145,40 +118,23 @@ header {
   color: var(--text-alt);
   text-decoration: none;
   font-weight: 500;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.links a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--accent);
-  transition: width 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .links a:hover {
   color: var(--accent);
 }
 
-.links a:hover::after {
-  width: 100%;
-}
-
 .btn {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
+  padding: 0.7rem 1.4rem;
   border-radius: 50px;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  cursor: pointer;
+  transition: all 0.3s ease;
   border: none;
-  position: relative;
-  overflow: hidden;
+  cursor: pointer;
+  font-size: 0.95rem;
 }
 
 .btn-o {
@@ -187,26 +143,11 @@ header {
   background: transparent;
 }
 
-.btn-o::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: var(--accent);
-  transition: left 0.4s ease;
-  z-index: -1;
-}
-
 .btn-o:hover {
+  background: var(--accent);
   color: var(--bg);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(78, 205, 196, 0.3);
-}
-
-.btn-o:hover::before {
-  left: 0;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(78,205,196,0.25);
 }
 
 .btn-w {
@@ -215,8 +156,8 @@ header {
 }
 
 .btn-w:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(78, 205, 196, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(78,205,196,0.35);
 }
 
 .burger {
@@ -234,43 +175,21 @@ header {
   height: 3px;
   background: var(--text);
   border-radius: 3px;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
-.drawer {
-  display: none;
-}
-
-/* 🦸 Seção Hero */
+/* Hero Section */
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
   padding-top: 100px;
-  position: relative;
-  overflow: hidden;
-}
-
-.tri-bg {
-  position: absolute;
-  right: -10%;
-  top: 10%;
-  width: 70%;
-  height: 80%;
-  fill: rgba(78, 205, 196, 0.03);
-  animation: rotate 30s linear infinite;
-  z-index: -1;
-}
-
-@keyframes rotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 3rem;
   align-items: center;
 }
 
@@ -278,15 +197,12 @@ header {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(78, 205, 196, 0.1);
+  background: rgba(78,205,196,0.1);
   color: var(--accent);
   padding: 0.5rem 1rem;
   border-radius: 50px;
   font-size: 0.9rem;
-  margin-bottom: 1.5rem;
-  animation: fadeInUp 0.8s ease forwards;
-  opacity: 0;
-  transform: translateY(20px);
+  margin-bottom: 1.25rem;
 }
 
 .tag i {
@@ -294,23 +210,13 @@ header {
   height: 8px;
   background: var(--accent);
   border-radius: 50%;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(78,205,196,0.4); }
-  50% { box-shadow: 0 0 0 8px rgba(78,205,196,0); }
-}
-
-@keyframes fadeInUp {
-  to { opacity: 1; transform: translateY(0); }
+  display: inline-block;
 }
 
 .hero-txt h1 {
-  font-size: 3.5rem;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
-  animation: fadeInUp 0.8s ease forwards 0.1s both;
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
 }
 
 .hero-txt h1 em {
@@ -319,34 +225,28 @@ header {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  position: relative;
 }
 
 .lead {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--text-alt);
-  margin-bottom: 2rem;
-  animation: fadeInUp 0.8s ease forwards 0.2s both;
+  margin-bottom: 1.75rem;
 }
 
 .cta {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.25rem;
   align-items: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
   flex-wrap: wrap;
-  animation: fadeInUp 0.8s ease forwards 0.3s both;
 }
 
 .btn-l {
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  padding: 0.9rem 1.75rem;
 }
 
 .ar {
+  display: inline-block;
   transition: transform 0.3s ease;
 }
 
@@ -358,22 +258,13 @@ header {
   color: var(--accent);
   text-decoration: none;
   font-weight: 500;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: gap 0.3s ease;
-}
-
-.lnk:hover {
-  gap: 0.75rem;
 }
 
 .trust {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 1.25rem;
   flex-wrap: wrap;
-  animation: fadeInUp 0.8s ease forwards 0.4s both;
 }
 
 .trust li {
@@ -391,24 +282,17 @@ header {
   font-weight: 700;
 }
 
-/* 📱 Tablet/Demo */
+/* Demo Card */
 .tablet {
   position: relative;
-  animation: floatY 6s ease-in-out infinite;
-}
-
-@keyframes floatY {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
 }
 
 .scr {
   background: #1A2D54;
   border-radius: 16px;
-  padding: 1rem;
-  box-shadow: var(--shadow-strong);
-  border: 1px solid rgba(78, 205, 196, 0.15);
-  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+  border: 1px solid rgba(78,205,196,0.15);
 }
 
 .scr aside {
@@ -421,56 +305,32 @@ header {
   width: 12px;
   height: 12px;
   border-radius: 50%;
+  display: inline-block;
 }
 
 .scr aside i:nth-child(1) { background: #FF5F57; }
 .scr aside i:nth-child(2) { background: #FEBC2E; }
 .scr aside i:nth-child(3) { background: #28CA42; }
-.scr aside i:nth-child(4) { background: transparent; margin-left: auto; border: none; }
 
 .pn-h {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+  font-size: 0.9rem;
 }
 
-.ring {
-  width: 60px;
-  height: 60px;
-}
-
-.ring circle {
-  fill: none;
-  stroke: rgba(78,205,196,0.1);
-  stroke-width: 3;
-}
-
-.ring .rv {
-  stroke-dasharray: 113;
-  stroke-dashoffset: 29;
-  stroke: var(--accent);
-  stroke-linecap: round;
-  animation: drawCircle 2s ease-out forwards;
-}
-
-@keyframes drawCircle {
-  from { stroke-dashoffset: 113; }
-  to { stroke-dashoffset: 29; }
-}
-
-.ring text {
-  fill: var(--text);
-  font-size: 14px;
-  font-weight: 700;
+.pn-h strong {
+  color: var(--gold);
+  font-size: 1.2rem;
 }
 
 .bars {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.4rem;
   align-items: flex-end;
-  height: 80px;
-  margin-bottom: 1rem;
+  height: 90px;
+  margin-bottom: 0.75rem;
 }
 
 .bars b {
@@ -478,164 +338,99 @@ header {
   background: linear-gradient(to top, var(--accent), rgba(78,205,196,0.3));
   border-radius: 4px 4px 0 0;
   min-height: 4px;
-  animation: growUp 1s ease-out forwards;
-  transform-origin: bottom;
-  transform: scaleY(0);
+  display: block;
 }
 
-@keyframes growUp {
-  to { transform: scaleY(1); }
-}
-
-.bars b:nth-child(1) { --h:42%; height: var(--h); animation-delay: 0.1s; }
-.bars b:nth-child(2) { --h:58%; height: var(--h); animation-delay: 0.15s; }
-.bars b:nth-child(3) { --h:50%; height: var(--h); animation-delay: 0.2s; }
-.bars b:nth-child(4) { --h:74%; height: var(--h); animation-delay: 0.25s; }
-.bars b:nth-child(5) { --h:66%; height: var(--h); animation-delay: 0.3s; }
-.bars b.hi { --h:92%; height: var(--h); background: linear-gradient(to top, var(--gold), rgba(255,217,61,0.3)); animation-delay: 0.35s; }
+.bars b:nth-child(1) { height: 42%; }
+.bars b:nth-child(2) { height: 58%; }
+.bars b:nth-child(3) { height: 50%; }
+.bars b:nth-child(4) { height: 74%; }
+.bars b:nth-child(5) { height: 66%; }
+.bars b.hi { height: 92%; background: linear-gradient(to top, var(--gold), rgba(255,217,61,0.3)); }
 
 .note {
   position: absolute;
-  bottom: -10px;
-  right: 20px;
-  background: rgba(78,205,196,0.15);
+  bottom: -15px;
+  right: 15px;
+  background: #0F244D;
   border: 1px solid var(--accent);
   padding: 0.5rem 1rem;
   border-radius: 8px;
-  backdrop-filter: blur(10px);
-  animation: fadeInUp 1s ease forwards 0.6s both;
+  font-size: 0.85rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
 .note b {
   color: var(--accent);
-  font-size: 1.1rem;
+  display: block;
 }
 
-.note span {
-  font-size: 0.8rem;
-  color: var(--text-alt);
-}
-
-/* 📌 Seções gerais */
+/* Seções */
 section {
-  padding: 6rem 0;
+  padding: 5rem 0;
 }
 
 .hd {
   text-align: center;
   max-width: 700px;
-  margin: 0 auto 4rem;
-}
-
-.hd .tag {
-  justify-content: center;
+  margin: 0 auto 3rem;
 }
 
 .hd h2 {
-  font-size: 2.25rem;
-  margin-top: 1rem;
+  font-size: 2rem;
+  margin-top: 0.75rem;
 }
 
 .sub {
   color: var(--text-alt);
-  margin-top: 1rem;
-  font-size: 1.05rem;
+  margin-top: 0.75rem;
 }
 
-.rv {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.rv.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* 💎 Diferencial */
+/* Diferencial */
 .dif-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .big {
-  background: linear-gradient(135deg, rgba(78,205,196,0.1), rgba(15,36,77,0.5));
-  padding: 3rem 2rem;
+  background: linear-gradient(135deg, rgba(78,205,196,0.08), rgba(15,36,77,0.5));
+  padding: 2.5rem;
   border-radius: 16px;
-  border: 1px solid rgba(78,205,196,0.2);
+  border: 1px solid rgba(78,205,196,0.15);
   grid-row: span 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.big::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(78,205,196,0.1), transparent);
-  transition: left 0.6s ease;
-}
-
-.big:hover::before {
-  left: 100%;
-}
-
-.big:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent);
-  box-shadow: var(--shadow);
 }
 
 .num {
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 800;
-  background: linear-gradient(180deg, var(--accent), rgba(78,205,196,0.4));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--accent);
   line-height: 1;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .big p {
-  font-size: 1.1rem;
   color: var(--text-alt);
 }
 
 .cd {
-  background: rgba(15,36,77,0.5);
-  padding: 2rem;
-  border-radius: 16px;
+  background: rgba(15,36,77,0.4);
+  padding: 1.75rem;
+  border-radius: 12px;
   border: 1px solid transparent;
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
 }
 
 .cd:hover {
-  border-color: rgba(78,205,196,0.3);
-  transform: translateY(-5px);
-  box-shadow: var(--shadow);
-}
-
-.cd svg {
-  width: 40px;
-  height: 40px;
-  stroke: var(--accent);
-  stroke-width: 1.5;
-  fill: none;
-  margin-bottom: 1rem;
+  border-color: rgba(78,205,196,0.25);
+  transform: translateY(-3px);
 }
 
 .cd h3 {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   margin-bottom: 0.5rem;
 }
 
@@ -644,107 +439,105 @@ section {
   font-size: 0.95rem;
 }
 
-/* 💻 Tecnologia */
+/* Tecnologia */
 .win {
   background: #1A2D54;
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid rgba(78,205,196,0.15);
-  box-shadow: var(--shadow-strong);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .win-b {
   background: rgba(0,0,0,0.2);
-  padding: 0.75rem 1rem;
+  padding: 0.6rem 1rem;
   display: flex;
   gap: 0.5rem;
   align-items: center;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--text-alt);
 }
 
 .win-b i {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: var(--accent);
+  display: inline-block;
 }
 
 .win-c {
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
-.evo h3 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+.win-c h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
 }
 
 .ev-bars {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.6rem;
   align-items: flex-end;
   height: 120px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
+  padding-top: 20px;
 }
 
 .ev-bars b {
   flex: 1;
   background: linear-gradient(to top, var(--accent), rgba(78,205,196,0.2));
-  border-radius: 6px 6px 0 0;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
   height: var(--h);
   position: relative;
-  animation: growUp 1s ease-out forwards;
-  transform-origin: bottom;
-  transform: scaleY(0);
 }
-
-.ev-bars b:nth-child(1) { --h:48%; animation-delay: 0.1s; }
-.ev-bars b:nth-child(2) { --h:57%; animation-delay: 0.2s; }
-.ev-bars b:nth-child(3) { --h:63%; animation-delay: 0.3s; }
-.ev-bars b:nth-child(4) { --h:71%; animation-delay: 0.4s; }
-.ev-bars b:nth-child(5) { --h:82%; background: linear-gradient(to top, var(--gold), rgba(255,217,61,0.2)); animation-delay: 0.5s; }
 
 .ev-bars b u {
-  position: absolute;
-  top: -25px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 0.75rem;
   text-decoration: none;
+  position: absolute;
+  top: -22px;
+  font-weight: 600;
+  color: var(--text);
 }
 
+.ev-bars b:nth-child(1) { --h:48%; }
+.ev-bars b:nth-child(2) { --h:57%; }
+.ev-bars b:nth-child(3) { --h:63%; }
+.ev-bars b:nth-child(4) { --h:71%; }
+.ev-bars b:nth-child(5) { --h:82%; background: linear-gradient(to top, var(--gold), rgba(255,217,61,0.2)); }
+
 .cap {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text-alt);
 }
 
 .ex {
-  font-size: 0.75rem;
-  color: rgba(184,199,224,0.5);
+  font-size: 0.7rem;
+  color: rgba(184,199,224,0.4);
   text-align: right;
-  padding: 0 1rem 1rem;
+  padding: 0 1rem 0.75rem;
 }
 
 .feat {
   list-style: none;
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .feat li {
   padding: 1rem 1.25rem;
-  background: rgba(15,36,77,0.4);
+  background: rgba(15,36,77,0.35);
   border-left: 3px solid var(--accent);
   border-radius: 0 8px 8px 0;
-  transition: all 0.3s ease;
-}
-
-.feat li:hover {
-  background: rgba(78,205,196,0.08);
-  transform: translateX(5px);
+  color: var(--text-alt);
+  font-size: 0.9rem;
 }
 
 .feat li b {
@@ -753,53 +546,394 @@ section {
   margin-bottom: 0.25rem;
 }
 
-.feat li {
-  color: var(--text-alt);
-  font-size: 0.95rem;
-}
-
-/* 📚 Turmas */
+/* Turmas */
 .tur-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .turma {
-  position: relative;
-  padding: 3rem 2rem;
+  padding: 2.5rem 2rem;
   border-radius: 16px;
-  overflow: hidden;
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.turma::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(78,205,196,0.08), transparent);
-  opacity: 0;
-  transition: opacity 0.4s ease;
+.turma.t-o {
+  background: rgba(15,36,77,0.4);
+  border: 1px solid rgba(78,205,196,0.2);
 }
 
-.turma:hover::before {
-  opacity: 1;
+.turma.t-b {
+  background: rgba(78,205,196,0.08);
+  border: 1px solid rgba(78,205,196,0.25);
 }
 
 .turma:hover {
-  transform: translateY(-10px) scale(1.02);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-.t-tri {
+.turma h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.turma p {
+  color: var(--text-alt);
+  margin-bottom: 1.5rem;
+}
+
+.turma ul {
+  list-style: none;
+  margin-bottom: 1.75rem;
+  color: var(--text-alt);
+  font-size: 0.9rem;
+}
+
+.turma ul li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.turma ul li::before {
+  content: '•';
+  color: var(--accent);
   position: absolute;
-  right: -5%;
-  bottom: -5%;
-  width: 50%;
-  height: 50%;
-  fill: rgba(255,255,255,0.02);
-  z-index: 0;
-  transition: transform 0.5s ease;
+  left: 0;
+  font-weight: bold;
 }
 
-.turma:hover .t-tri {
+/* Rodapé */
+footer {
+  background: rgba(15,36,77,0.5);
+  padding: 3rem 0 1.5rem;
+  border-top: 1px solid rgba(78,205,196,0.1);
+}
 
+.ft {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.f1 .brand {
+  margin-bottom: 0.75rem;
+}
+
+.f1 p {
+  color: var(--text-alt);
+  font-size: 0.9rem;
+}
+
+.f2 h4, .f3 h4 {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.f2 a {
+  display: block;
+  color: var(--text-alt);
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.f2 a:hover {
+  color: var(--accent);
+}
+
+.f3 a {
+  display: block;
+  color: var(--accent);
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.f3 p {
+  color: var(--text-alt);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.soc {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.soc a {
+  color: var(--text-alt);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.soc a:hover {
+  color: var(--accent);
+}
+
+.fb {
+  border-top: 1px solid rgba(78,205,196,0.1);
+  padding-top: 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-alt);
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--bg-alt);
+    flex-direction: column;
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(78,205,196,0.2);
+  }
+  .links.open {
+    display: flex;
+  }
+  .burger {
+    display: flex;
+  }
+  .hero-txt h1 {
+    font-size: 2.2rem;
+  }
+  .big {
+    grid-row: auto;
+  }
+}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <div class="w nav">
+    <a href="#inicio" class="brand">
+      <span><small>CURSINHO</small><b>VÉRTICE</b><i>Preparatório para a ETEC e o ENEM</i></span>
+    </a>
+    <nav class="links" id="nav-links" aria-label="Principal">
+      <a href="#sobre">Quem somos</a>
+      <a href="#turmas">Turmas</a>
+      <a href="#tecnologia">Tecnologia</a>
+      <a href="#professores">Professores</a>
+      <a href="#contato">Contato</a>
+      <a href="#portal" class="btn btn-o">Portal do Aluno</a>
+    </nav>
+    <button class="burger" id="bg" aria-label="Abrir menu">
+      <i></i><i></i><i></i>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="w hero-grid">
+      <div class="hero-txt">
+        <p class="tag"><i></i>Aulas aos sábados · ETEC e ENEM</p>
+        <h1>Seu <em>Vértice</em> de Aprovação: ETEC e ENEM.</h1>
+        <p class="lead">Aprenda com professores especialistas e com o uso de tecnologia exclusiva aos sábados.</p>
+        <div class="cta">
+          <a href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Quero%20garantir%20minha%20vaga%20no%20pr%C3%B3ximo%20simulado." target="_blank" class="btn btn-o btn-l">
+            Garanta sua vaga no próximo simulado <span class="ar">→</span>
+          </a>
+          <a href="#turmas" class="lnk">Conheça as turmas</a>
+        </div>
+        <ul class="trust">
+          <li>Matemática e Ciências da Natureza</li>
+          <li>Linguagens e Ciências Humanas</li>
+          <li>Correção por TRI (Nível de Dificuldade)</li>
+        </ul>
+      </div>
+
+      <div class="tablet">
+        <div class="scr">
+          <aside><i></i><i></i><i></i></aside>
+          <div class="pn">
+            <div class="pn-h"><span>Simulado 07 · ENEM</span> <strong>742 pts</strong></div>
+            <div class="bars">
+              <b></b>
+              <b></b>
+              <b></b>
+              <b></b>
+              <b></b>
+              <b class="hi"></b>
+            </div>
+          </div>
+        </div>
+        <div class="note"><b>+42 pts</b><span>Matemática</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dif" id="sobre">
+    <div class="w">
+      <div class="hd">
+        <p class="tag"><i></i>Nosso diferencial</p>
+        <h2>Performance começa em quem ensina.</h2>
+      </div>
+      <div class="dif-grid">
+        <div class="big" id="professores">
+          <span class="num">+35</span>
+          <p>anos de experiência somada em sala de aula preparando alunos para os vestibulares mais concorridos.</p>
+        </div>
+        <article class="cd">
+          <h3>Didática veterana</h3>
+          <p>Professores que conhecem as bancas e sabem exatamente onde você erra antes mesmo de você errar.</p>
+        </article>
+        <article class="cd">
+          <h3>Foco ETEC e ENEM</h3>
+          <p>Conteúdo cirúrgico direcionado aos editais oficiais, sem enrolação e sem perda de tempo.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="tec" id="tecnologia">
+    <div class="w">
+      <div class="hd">
+        <p class="tag"><i></i>Tecnologia Vértice</p>
+        <h2>Correção por TRI e devolutiva personalizada.</h2>
+        <p class="sub">Um portal de simulados que mostra, em tempo real, onde você já está forte e onde ainda precisa evoluir.</p>
+      </div>
+      <div class="win">
+        <div class="win-b"><i></i><span>portal.vertice / meu-desempenho</span></div>
+        <div class="win-c">
+          <h3>Evolução nos simulados</h3>
+          <div class="ev-bars">
+            <b><u>610</u></b>
+            <b><u>648</u></b>
+            <b><u>681</u></b>
+            <b><u>715</u></b>
+            <b><u>742</u></b>
+          </div>
+          <p class="cap">Análise individual TRI: veja seus pontos fortes e garanta coerência pedagógica na prova.</p>
+        </div>
+        <p class="ex">*Dados ilustrativos do painel do aluno</p>
+      </div>
+
+      <ul class="feat">
+        <li>
+          <b>Diagnóstico por Habilidade</b>
+          Identifique rapidamente os tópicos de maior peso que precisam de reforço.
+        </li>
+        <li>
+          <b>Simulados Cronometrados</b>
+          Treine gestão de tempo nas mesmas condições reais do dia da prova.
+        </li>
+        <li>
+          <b>Resoluções Comentadas</b>
+          Acesse gabaritos detalhados passo a passo logo após finalizar o teste.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="turmas">
+    <div class="w">
+      <div class="hd">
+        <p class="tag"><i></i>Turmas 2026</p>
+        <h2>Escolha a preparação ideal para o seu objetivo.</h2>
+        <p class="sub">Aulas presenciais aos sábados com material didático incluso e acesso total ao portal.</p>
+      </div>
+      <div class="tur-grid">
+        <div class="turma t-o">
+          <div>
+            <h3>Extensivo ETEC</h3>
+            <p>Ideal para estudantes do 9º ano do Ensino Fundamental que buscam vaga nas melhores ETECs.</p>
+            <ul>
+              <li>Aulas aos sábados (08h às 12h30)</li>
+              <li>Simulados mensais no padrão Vestibulinho</li>
+              <li>Foco em interpretação, lógica e atualidades</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Tenho%20interesse%20na%20turma%20ETEC." target="_blank" class="btn btn-o">Quero saber mais</a>
+        </div>
+
+        <div class="turma t-b">
+          <div>
+            <h3>Intensivo ENEM</h3>
+            <p>Preparação completa para alunos do Ensino Médio e egressos focados em universidades públicas e ProUni.</p>
+            <ul>
+              <li>Aulas aos sábados (08h às 14h00)</li>
+              <li>Simulados com correção TRI oficial</li>
+              <li>Oficina de redação com correção individual</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Tenho%20interesse%20na%20turma%20ENEM." target="_blank" class="btn btn-w">Garantir minha vaga</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contato">
+  <div class="w">
+    <div class="ft">
+      <div class="f1">
+        <a href="#inicio" class="brand">
+          <span><small>CURSINHO</small><b>VÉRTICE</b></span>
+        </a>
+        <p>Preparatório de alta performance para ETEC e ENEM com foco em resultado e tecnologia educacional.</p>
+      </div>
+
+      <div class="f2">
+        <h4>Navegação</h4>
+        <a href="#sobre">Quem somos</a>
+        <a href="#turmas">Turmas</a>
+        <a href="#tecnologia">Tecnologia TRI</a>
+        <a href="#professores">Professores</a>
+      </div>
+
+      <div class="f3">
+        <h4>Fale Conosco</h4>
+        <p>Atendimento de segunda a sábado</p>
+        <a href="https://wa.me/5511900000000" target="_blank">(11) 90000-0000 (WhatsApp)</a>
+        <p>contato@cursinhovertice.com.br</p>
+        <div class="soc">
+          <a href="#">Instagram</a>
+          <a href="#">YouTube</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="fb">
+      <p>© 2026 Cursinho Vértice. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Menu Mobile
+  const burger = document.getElementById('bg');
+  const navLinks = document.getElementById('nav-links');
+
+  burger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+
+  // Fecha o menu ao clicar em um link no celular
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+    });
+  });
+</script>
+
+</body>
+</html>
