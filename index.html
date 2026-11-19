@@ -2,150 +2,804 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Cursinho Vértice | Preparatório ETEC e ENEM aos sábados</title>
-<meta name="description" content="Cursinho preparatório para ETEC e ENEM com professores veteranos na Educação e portal de simulados com correção por TRI.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cursinho Vértice | Preparatório ETEC e ENEM</title>
+<meta name="description" content="Cursinho preparatório para ETEC e ENEM com professores veteranos e portal de simulados.">
 <meta name="theme-color" content="#0B1B3A">
 <link rel="icon" href="logo.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
-<header id="hd">
-  <div class="w nav">
-    <a href="#inicio" class="brand" aria-label="Cursinho Vértice, início">
-      <img src="logo.svg" alt="">
-      <span><small>CURSINHO</small><b>VÉRTICE</b><i>Preparatório para a ETEC e o ENEM</i></span>
-    </a>
-    <nav class="links" aria-label="Principal">
-      <a href="#sobre">Quem somos</a>
-      <a href="#turmas">Turmas</a>
-      <a href="#tecnologia">Tecnologia</a>
-      <a href="#professores">Professores</a>
-      <a href="#contato">Contato</a>
-      <a href="#" class="btn btn-o btn-s">Portal do Aluno</a>
-    </nav>
-    <button class="burger" id="bg" aria-label="Abrir menu" aria-expanded="false"><i></i><i></i><i></i></button>
-  </div>
-  <nav class="drawer" id="dr" aria-label="Menu móvel">
-    <a href="#sobre">Quem somos</a><a href="#turmas">Turmas</a><a href="#tecnologia">Tecnologia</a><a href="#professores">Professores</a><a href="#contato">Contato</a>
-    <a href="#" class="btn btn-o">Portal do Aluno</a>
-  </nav>
-</header>
+:root {
+  --bg: #0B1B3A;
+  --bg-alt: #0F244D;
+  --accent: #4ECDC4;
+  --accent-2: #FF6B6B;
+  --gold: #FFD93D;
+  --text: #FFFFFF;
+  --text-alt: #B8C7E0;
+  --grad-1: linear-gradient(135deg, #4ECDC4, #44A08D);
+  --grad-2: linear-gradient(135deg, #FF6B6B, #FF8E53);
+  --shadow: 0 10px 40px rgba(78, 205, 196, 0.15);
+  --shadow-strong: 0 15px 50px rgba(0,0,0,0.3);
+}
 
-<main>
-<section class="hero" id="inicio">
-  <svg class="tri-bg" id="triBg" viewBox="0 0 100 90" aria-hidden="true"><path d="M50 2 98 88H2Z"/></svg>
-  <div class="w hero-grid">
-    <div class="hero-txt">
-      <p class="tag"><i></i>Aulas aos sábados · ETEC e ENEM</p>
-      <h1>Seu <em>Vértice</em> de Aprovação: ETEC e ENEM.</h1>
-      <p class="lead">Aprenda com professores especialistas e com o uso de tecnologia exclusiva aos sábados.</p>
-      <div class="cta">
-        <a href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Quero%20garantir%20minha%20vaga%20no%20pr%C3%B3ximo%20simulado." class="btn btn-o btn-l">Garanta sua vaga no próximo simulado
-          <span class="ar"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
-        <a href="#turmas" class="lnk">Conheça as turmas</a>
-      </div>
-      <ul class="trust"><li>Matemática e Ciências da Natureza</li><li>Linguagens e Ciências Humanas</li><li>Correção por TRI (Nível de Dificuldade)</li></ul>
-    </div>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    <div class="tablet" aria-hidden="true">
-      <div class="scr">
-        <aside><i></i><i></i><i></i><i></i></aside>
-        <div class="pn">
-          <div class="pn-h"><span>Simulado 07 · ENEM</span>
-            <svg viewBox="0 0 44 44" class="ring"><circle cx="22" cy="22" r="18"/><circle cx="22" cy="22" r="18" class="rv"/><text x="22" y="26" text-anchor="middle">742</text></svg></div>
-          <div class="bars"><b style="--h:42%"></b><b style="--h:58%"></b><b style="--h:50%"></b><b style="--h:74%"></b><b style="--h:66%"></b><b class="hi" style="--h:92%"></b></div>
-          <div class="ln"><i></i><i></i></div>
-        </div>
-      </div>
-      <div class="note"><b>+42 pts</b><span>Matemática</span></div>
-    </div>
-  </div>
-</section>
+html {
+  scroll-behavior: smooth;
+}
 
-<section class="dif" id="sobre">
-  <div class="w">
-    <div class="hd rv"><p class="tag"><i></i>Nosso diferencial</p><h2>Performance começa em quem ensina.</h2></div>
-    <div class="dif-grid">
-      <div class="big rv" id="professores">
-        <span class="num">+<b data-count="35">35</b></span>
-        <p>anos de experiência somada em Matemática e Química.</p>
-      </div>
-      <article class="cd rv">
-        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6 42 38H6Z"/><circle cx="24" cy="27" r="6"/><path d="m29 32 7 7"/></svg>
-        <h3>Didática veterana</h3><p>Professores que sabem onde você erra antes de você errar.</p>
-      </article>
-      <article class="cd rv">
-        <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17"/><circle cx="24" cy="24" r="8"/><path d="M24 24 40 8M33 8h7v7"/></svg>
-        <h3>Foco ETEC e ENEM</h3><p>Conteúdo cirúrgico para os editais, sem perda de tempo.</p>
-      </article>
-    </div>
-  </div>
-</section>
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
-<section class="tec" id="tecnologia">
-  <div class="w">
-    <div class="hd rv"><p class="tag"><i></i>Tecnologia Vértice</p><h2>Correção por TRI e devolutiva personalizada.</h2>
-      <p class="sub">Um portal de simulados que mostra, em tempo real, onde você já está forte e onde ainda precisa evoluir.</p></div>
-    <div class="win rv" id="win">
-      <div class="win-b"><i></i><i></i><i></i><span>portal.vertice / meu desempenho</span></div>
-      <div class="win-c">
-        <figure><svg id="radar" viewBox="-40 -10 380 320" role="img" aria-label="Gráfico radar de desempenho por área"></svg>
-          <figcaption><span class="k1"></span>Você <span class="k2"></span>Média da turma</figcaption></figure>
-        <div class="evo"><h3>Evolução nos simulados</h3>
-          <div class="ev-bars"><b style="--h:48%"><u>610</u></b><b style="--h:57%"><u>648</u></b><b style="--h:63%"><u>681</u></b><b style="--h:71%"><u>715</u></b><b class="hi" style="--h:82%"><u>742</u></b></div>
-          <p class="cap">Análise individual TRI: veja seus pontos fortes e fracos em tempo real.</p></div>
-      </div>
-      <p class="ex">Dados ilustrativos</p>
-    </div>
-    <ul class="feat">
-      <li class="rv"><b>Teoria da Resposta ao Item</b>Nota que considera a dificuldade de cada questão, como nos grandes exames.</li>
-      <li class="rv"><b>Devolutiva personalizada</b>Um retrato do seu desempenho, para estudar o que realmente importa.</li>
-      <li class="rv"><b>Resultado em tempo real</b>Acompanhe sua evolução simulado a simulado no portal.</li>
-    </ul>
-  </div>
-</section>
+/* 🔵 Animação de partículas de fundo */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 15% 40%, rgba(78,205,196,0.08) 0%, transparent 50%),
+    radial-gradient(circle at 85% 60%, rgba(255,107,107,0.06) 0%, transparent 50%),
+    radial-gradient(circle at 50% 20%, rgba(255,217,61,0.04) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+  animation: bgPulse 8s ease-in-out infinite alternate;
+}
 
-<section class="tur" id="turmas">
-  <div class="w">
-    <div class="hd c rv"><h2>Escolha o seu caminho de aprovação.</h2></div>
-    <div class="tur-grid">
-      <article class="turma t-o rv">
-        <svg class="t-tri" viewBox="0 0 100 90" aria-hidden="true"><path d="M50 2 98 88H2Z"/></svg>
-        <h3>Intensivo ETEC Sábados</h3>
-        <p>O portão de entrada para o ensino técnico e médio de qualidade.</p>
-        <a href="#contato" class="btn btn-w">Ver grade curricular e mensalidades</a>
-      </article>
-      <article class="turma t-b rv">
-        <svg class="t-tri" viewBox="0 0 100 90" aria-hidden="true"><path d="M50 2 98 88H2Z"/></svg>
-        <h3>Turma ENEM Sábados</h3>
-        <p>Foco total nas matrizes de referência para as melhores universidades.</p>
-        <a href="#contato" class="btn btn-o">Ver grade curricular e mensalidades</a>
-      </article>
-    </div>
-  </div>
-</section>
-</main>
+@keyframes bgPulse {
+  0% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
 
-<footer id="contato">
-  <div class="w ft">
-    <div class="f1"><a href="#inicio" class="brand"><img src="logo.svg" alt=""><span><b>VÉRTICE</b></span></a>
-      <p>Preparatório para ETEC e ENEM, com aulas aos sábados.</p></div>
-    <nav class="f2" aria-label="Rodapé"><a href="#sobre">Quem somos</a><a href="#turmas">Turmas</a><a href="#tecnologia">Tecnologia</a><a href="#professores">Professores</a></nav>
-    <div class="f3">
-      <a href="https://wa.me/5511900000000">WhatsApp: (11) 90000-0000</a>
-      <p>[Endereço do cursinho]</p>
-      <p class="soc"><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">YouTube</a></p>
-    </div>
-  </div>
-  <div class="w fb"><a href="mailto:contato@seudominio.com.br?subject=Quero%20ser%20professor%20parceiro">Trabalhe conosco (seja um professor parceiro)</a>
-    <span>Cursinho Vértice &copy; <span id="y"></span> — Todos os direitos reservados.</span></div>
-</footer>
+.w {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-<script src="main.js"></script>
-</body>
-</html>
+/* 🎯 Cabeçalho */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+  background: rgba(11, 27, 58, 0.8);
+  border-bottom: 1px solid rgba(78, 205, 196, 0.1);
+  transition: all 0.4s ease;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 700;
+  transition: transform 0.3s ease;
+}
+
+.brand:hover {
+  transform: scale(1.02);
+}
+
+.brand img {
+  height: 45px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.brand span small {
+  font-size: 0.7rem;
+  color: var(--accent);
+  letter-spacing: 2px;
+}
+
+.brand span b {
+  font-size: 1.3rem;
+  display: block;
+  background: linear-gradient(90deg, var(--accent), #6EE7DE);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.brand span i {
+  font-size: 0.75rem;
+  color: var(--text-alt);
+  font-weight: 400;
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.links a {
+  color: var(--text-alt);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.links a:hover {
+  color: var(--accent);
+}
+
+.links a:hover::after {
+  width: 100%;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-o {
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+}
+
+.btn-o::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--accent);
+  transition: left 0.4s ease;
+  z-index: -1;
+}
+
+.btn-o:hover {
+  color: var(--bg);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(78, 205, 196, 0.3);
+}
+
+.btn-o:hover::before {
+  left: 0;
+}
+
+.btn-w {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.btn-w:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(78, 205, 196, 0.4);
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.burger i {
+  width: 25px;
+  height: 3px;
+  background: var(--text);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.drawer {
+  display: none;
+}
+
+/* 🦸 Seção Hero */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.tri-bg {
+  position: absolute;
+  right: -10%;
+  top: 10%;
+  width: 70%;
+  height: 80%;
+  fill: rgba(78, 205, 196, 0.03);
+  animation: rotate 30s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(78, 205, 196, 0.1);
+  color: var(--accent);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.tag i {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(78,205,196,0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(78,205,196,0); }
+}
+
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-txt h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 0.8s ease forwards 0.1s both;
+}
+
+.hero-txt h1 em {
+  font-style: normal;
+  background: linear-gradient(90deg, var(--accent), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.lead {
+  font-size: 1.15rem;
+  color: var(--text-alt);
+  margin-bottom: 2rem;
+  animation: fadeInUp 0.8s ease forwards 0.2s both;
+}
+
+.cta {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease forwards 0.3s both;
+}
+
+.btn-l {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ar {
+  transition: transform 0.3s ease;
+}
+
+.btn-l:hover .ar {
+  transform: translateX(4px);
+}
+
+.lnk {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: gap 0.3s ease;
+}
+
+.lnk:hover {
+  gap: 0.75rem;
+}
+
+.trust {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease forwards 0.4s both;
+}
+
+.trust li {
+  color: var(--text-alt);
+  font-size: 0.9rem;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.trust li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* 📱 Tablet/Demo */
+.tablet {
+  position: relative;
+  animation: floatY 6s ease-in-out infinite;
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.scr {
+  background: #1A2D54;
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: var(--shadow-strong);
+  border: 1px solid rgba(78, 205, 196, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.scr aside {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.scr aside i {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.scr aside i:nth-child(1) { background: #FF5F57; }
+.scr aside i:nth-child(2) { background: #FEBC2E; }
+.scr aside i:nth-child(3) { background: #28CA42; }
+.scr aside i:nth-child(4) { background: transparent; margin-left: auto; border: none; }
+
+.pn-h {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.ring {
+  width: 60px;
+  height: 60px;
+}
+
+.ring circle {
+  fill: none;
+  stroke: rgba(78,205,196,0.1);
+  stroke-width: 3;
+}
+
+.ring .rv {
+  stroke-dasharray: 113;
+  stroke-dashoffset: 29;
+  stroke: var(--accent);
+  stroke-linecap: round;
+  animation: drawCircle 2s ease-out forwards;
+}
+
+@keyframes drawCircle {
+  from { stroke-dashoffset: 113; }
+  to { stroke-dashoffset: 29; }
+}
+
+.ring text {
+  fill: var(--text);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.bars {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-end;
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+.bars b {
+  flex: 1;
+  background: linear-gradient(to top, var(--accent), rgba(78,205,196,0.3));
+  border-radius: 4px 4px 0 0;
+  min-height: 4px;
+  animation: growUp 1s ease-out forwards;
+  transform-origin: bottom;
+  transform: scaleY(0);
+}
+
+@keyframes growUp {
+  to { transform: scaleY(1); }
+}
+
+.bars b:nth-child(1) { --h:42%; height: var(--h); animation-delay: 0.1s; }
+.bars b:nth-child(2) { --h:58%; height: var(--h); animation-delay: 0.15s; }
+.bars b:nth-child(3) { --h:50%; height: var(--h); animation-delay: 0.2s; }
+.bars b:nth-child(4) { --h:74%; height: var(--h); animation-delay: 0.25s; }
+.bars b:nth-child(5) { --h:66%; height: var(--h); animation-delay: 0.3s; }
+.bars b.hi { --h:92%; height: var(--h); background: linear-gradient(to top, var(--gold), rgba(255,217,61,0.3)); animation-delay: 0.35s; }
+
+.note {
+  position: absolute;
+  bottom: -10px;
+  right: 20px;
+  background: rgba(78,205,196,0.15);
+  border: 1px solid var(--accent);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  animation: fadeInUp 1s ease forwards 0.6s both;
+}
+
+.note b {
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+.note span {
+  font-size: 0.8rem;
+  color: var(--text-alt);
+}
+
+/* 📌 Seções gerais */
+section {
+  padding: 6rem 0;
+}
+
+.hd {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+}
+
+.hd .tag {
+  justify-content: center;
+}
+
+.hd h2 {
+  font-size: 2.25rem;
+  margin-top: 1rem;
+}
+
+.sub {
+  color: var(--text-alt);
+  margin-top: 1rem;
+  font-size: 1.05rem;
+}
+
+.rv {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rv.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 💎 Diferencial */
+.dif-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.big {
+  background: linear-gradient(135deg, rgba(78,205,196,0.1), rgba(15,36,77,0.5));
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(78,205,196,0.2);
+  grid-row: span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.big::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(78,205,196,0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.big:hover::before {
+  left: 100%;
+}
+
+.big:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+}
+
+.num {
+  font-size: 4rem;
+  font-weight: 800;
+  background: linear-gradient(180deg, var(--accent), rgba(78,205,196,0.4));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.big p {
+  font-size: 1.1rem;
+  color: var(--text-alt);
+}
+
+.cd {
+  background: rgba(15,36,77,0.5);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  transition: all 0.4s ease;
+}
+
+.cd:hover {
+  border-color: rgba(78,205,196,0.3);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.cd svg {
+  width: 40px;
+  height: 40px;
+  stroke: var(--accent);
+  stroke-width: 1.5;
+  fill: none;
+  margin-bottom: 1rem;
+}
+
+.cd h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.cd p {
+  color: var(--text-alt);
+  font-size: 0.95rem;
+}
+
+/* 💻 Tecnologia */
+.win {
+  background: #1A2D54;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(78,205,196,0.15);
+  box-shadow: var(--shadow-strong);
+  margin-bottom: 2rem;
+}
+
+.win-b {
+  background: rgba(0,0,0,0.2);
+  padding: 0.75rem 1rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--text-alt);
+}
+
+.win-b i {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.win-c {
+  padding: 2rem;
+}
+
+.evo h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.ev-bars {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-end;
+  height: 120px;
+  margin-bottom: 1rem;
+}
+
+.ev-bars b {
+  flex: 1;
+  background: linear-gradient(to top, var(--accent), rgba(78,205,196,0.2));
+  border-radius: 6px 6px 0 0;
+  height: var(--h);
+  position: relative;
+  animation: growUp 1s ease-out forwards;
+  transform-origin: bottom;
+  transform: scaleY(0);
+}
+
+.ev-bars b:nth-child(1) { --h:48%; animation-delay: 0.1s; }
+.ev-bars b:nth-child(2) { --h:57%; animation-delay: 0.2s; }
+.ev-bars b:nth-child(3) { --h:63%; animation-delay: 0.3s; }
+.ev-bars b:nth-child(4) { --h:71%; animation-delay: 0.4s; }
+.ev-bars b:nth-child(5) { --h:82%; background: linear-gradient(to top, var(--gold), rgba(255,217,61,0.2)); animation-delay: 0.5s; }
+
+.ev-bars b u {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cap {
+  font-size: 0.9rem;
+  color: var(--text-alt);
+}
+
+.ex {
+  font-size: 0.75rem;
+  color: rgba(184,199,224,0.5);
+  text-align: right;
+  padding: 0 1rem 1rem;
+}
+
+.feat {
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.feat li {
+  padding: 1rem 1.25rem;
+  background: rgba(15,36,77,0.4);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  transition: all 0.3s ease;
+}
+
+.feat li:hover {
+  background: rgba(78,205,196,0.08);
+  transform: translateX(5px);
+}
+
+.feat li b {
+  display: block;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+
+.feat li {
+  color: var(--text-alt);
+  font-size: 0.95rem;
+}
+
+/* 📚 Turmas */
+.tur-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.turma {
+  position: relative;
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.turma::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(78,205,196,0.08), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.turma:hover::before {
+  opacity: 1;
+}
+
+.turma:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+.t-tri {
+  position: absolute;
+  right: -5%;
+  bottom: -5%;
+  width: 50%;
+  height: 50%;
+  fill: rgba(255,255,255,0.02);
+  z-index: 0;
+  transition: transform 0.5s ease;
+}
+
+.turma:hover .t-tri {
+
